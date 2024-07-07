@@ -232,7 +232,7 @@ static int parseargs (int ac,
 	    mpq_readbasis = boptarg;
 	    break;
 	case 'P':
-	    mpq_precision = atoi (boptarg);
+	    mpq_precision = (unsigned int)atoi (boptarg);
 	    break;
 	case 'd':
 	    mpq_simplexalgo = DUAL_SIMPLEX;

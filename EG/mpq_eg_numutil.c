@@ -22,7 +22,8 @@ You should have received a copy of the GNU Lesser General Public License
 void mpq_EGutilPermSort (const size_t sz, int *const perm,
       const mpq_t * const elem)
 {
-    size_t i, j, temp;
+    size_t i, j;
+    int temp;
     mpq_t t;
     if (sz <= 1)
 	return;

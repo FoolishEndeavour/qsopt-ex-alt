@@ -103,7 +103,7 @@ static int parseargs (int ac, char **av)
 	    readbasis = boptarg;
 	    break;
 	case 'P':
-	    precision = atoi (boptarg);
+	    precision = (unsigned int)atoi (boptarg);
 	    break;
 	case 'd':
 	    simplexalgo = DUAL_SIMPLEX;

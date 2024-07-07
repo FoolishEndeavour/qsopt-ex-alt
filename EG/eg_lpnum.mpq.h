@@ -115,7 +115,7 @@ int mpq_EGlpNumReadStrXc (mpq_t var,
 /** @brief Allocate and initialize (if needed) 'size' elements of type mpq_t
  * and return it, if no more memory, exit(1) */
 #define mpq_EGlpNumAllocArray(size) ({\
-	size_t __i__ = (size);\
+	size_t __i__ = (size_t)(size);\
 	mpq_t *__res = __EGlpNumAllocArray(mpq_t,__i__);\
 	while(__i__--) mpq_init(__res[__i__]);\
 	__res;})

@@ -148,7 +148,7 @@ extern mpf_t __lpnum_mpf__;
 /** @brief Allocate and initialize (if needed) 'size' elements of type mpf_t
  * and return it, if no more memory, exit(1) */
 #define mpf_EGlpNumAllocArray(size) ({\
-	size_t __i__ = (size);\
+	size_t __i__ = (size_t)(size);\
 	mpf_t *__res = __EGlpNumAllocArray(mpf_t,__i__);\
 	while(__i__--) mpf_init(__res[__i__]);\
 	__res;})

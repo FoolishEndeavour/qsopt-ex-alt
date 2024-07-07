@@ -243,7 +243,7 @@ void EGlpNumSetPrecision (const unsigned prec);
  * @param size the length of the array to be returned, note that it can be
  * zero, in wich case no memory allocation is made and NULL is returned. */
 #define __EGlpNumAllocArray(type,size) ({\
-	size_t __sz = (size);\
+	size_t __sz = (size_t)(size);\
 	size_t *__utmp = __sz ? (size_t*) EGmalloc (sizeof(type) * __sz + sizeof(size_t)) : 0;\
 	if(__sz) __utmp[0] = __sz;\
 	(type*)(__sz ? (__utmp+1):0);})

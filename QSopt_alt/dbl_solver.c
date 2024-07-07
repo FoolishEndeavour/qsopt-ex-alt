@@ -232,7 +232,7 @@ static int parseargs (int ac,
 	    dbl_readbasis = boptarg;
 	    break;
 	case 'P':
-	    dbl_precision = atoi (boptarg);
+	    dbl_precision = (unsigned int)atoi (boptarg);
 	    break;
 	case 'd':
 	    dbl_simplexalgo = DUAL_SIMPLEX;
