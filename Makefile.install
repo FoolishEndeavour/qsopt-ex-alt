@@ -21,7 +21,7 @@ sharedir = share
 
 
 install: installdir
-	$(MAKE) install-licence install-headers install-library 
+	@$(MAKE) -f Makefile.install install-licence install-headers install-library 
 
 
 installdir:
@@ -30,12 +30,12 @@ installdir:
 
 
 install-licence:  ${LICENSE} installdir
-	@if [ ! -d "${DESTDIR}/${sharedir}" ]; then $(MKDIR_P) "${DESTDIR}/${sharedir} ; fi"
+	@if [ ! -d "${DESTDIR}/${sharedir}" ]; then $(MKDIR_P) "${DESTDIR}/${sharedir}" ; fi
 	$(INSTALL) -c -p -m 644  "$(LICENSE)"  "$(DESTDIR)/$(sharedir)/licenses/${BASE_NAME}/License.txt"
 
 
 install-library: $(LIB_DIR)/$(SHARED_LIBRARY) installdir
-	@if [ ! -d "${DESTDIR}/${libdir}" ]; then $(MKDIR_P) "${DESTDIR}/${libdir} ; fi"
+	@if [ ! -d "${DESTDIR}/${libdir}" ]; then $(MKDIR_P) "${DESTDIR}/${libdir}" ; fi
 	$(INSTALL) -c -p -m 755 "$(LIB_DIR)/$(SHARED_LIBRARY)"  "$(DESTDIR)/$(libdir)/"
 
 
