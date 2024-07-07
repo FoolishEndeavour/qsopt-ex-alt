@@ -30,7 +30,7 @@ installdir:
 
 
 install-licence:  ${LICENSE} installdir
-	@if [ ! -d "${DESTDIR}/${sharedir}" ]; then $(MKDIR_P) "${DESTDIR}/${sharedir}" ; fi
+	@if [ ! -d "${DESTDIR}/${sharedir}/licenses/${BASE_NAME}" ]; then $(MKDIR_P) "${DESTDIR}/${sharedir}/licenses/${BASE_NAME}" ; fi
 	$(INSTALL) -c -p -m 644  "$(LICENSE)"  "$(DESTDIR)/$(sharedir)/licenses/${BASE_NAME}/License.txt"
 
 
