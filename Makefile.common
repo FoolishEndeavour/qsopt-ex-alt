@@ -203,7 +203,7 @@ ifdef OPTIMIZE
 ifneq ($(OPTIMIZE),0)
 SW += -O3 -fforce-addr -funroll-loops \
       -fno-trapping-math \
-      -funsafe-math-optimizations -ffast-math -fno-math-errno \
+      -fno-math-errno \
       -Wuninitialized 
 else
 SW += -fno-inline -g
