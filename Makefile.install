@@ -137,7 +137,7 @@ EXACT_HEADER_FILE = exact.h eg_exutil.h
 
 
 install-headers: installdir $(header_DATA)
-	@if [ ! -d "${DESTDIR}/${includedir}" ]; then $(MKDIR_P) "${DESTDIR}/${includedir} ; fi"
+	@if [ ! -d "${DESTDIR}/${includedir}" ]; then $(MKDIR_P) "${DESTDIR}/${includedir}" ; fi
 	# INTERFACE_HEADER_FILE = QSopt_ex.h
 	$(INSTALL) -c -m 644 include/QSopt_ex.h "$(DESTDIR)/$(includedir)/"
 	# EXACT_HEADER_FILE = exact.h eg_exutil.h
