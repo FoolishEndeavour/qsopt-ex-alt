@@ -103,7 +103,7 @@ CTAGS := ctags
 AWK := gawk
 CUT := cut
 UNIQ := uniq
-MKDIR := mkdir -p
+MKDIR_P := mkdir -p
 
 # =============================================================================
 # Path for each kind of file
