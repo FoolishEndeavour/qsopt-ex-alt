@@ -21,7 +21,7 @@ sharedir = share
 
 
 install: installdir
-	$(MAKE) install-licence install-headers install-library 
+	@$(MAKE) -f Makefile.install install-licence install-headers install-library 
 
 
 installdir:
