@@ -142,8 +142,6 @@ install-headers: installdir $(header_DATA)
 	$(INSTALL) -c -m 644 include/QSopt_ex.h "$(DESTDIR)/$(includedir)/"
 	# EXACT_HEADER_FILE = exact.h eg_exutil.h
 	$(INSTALL) -c -m 644 include/QSopt_ex.h "$(DESTDIR)/$(includedir)/"
-
-
 	@list='$(header_DATA)'; test -n "$(headerdir)" || list=; \
 	if test -n "$$list"; then \
 	  echo " $(MKDIR_P) '$(DESTDIR)$(headerdir)'"; \
