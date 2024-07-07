@@ -1,0 +1,16 @@
+*.o
+*.a
+*.so
+*.dynlib
+lib
+obj
+dbl_solver
+esolver
+mpf_solver
+mpq_solver
+tag
+tags
+tag.dbl
+tag.mpf
+tag.mpq
+dep/
