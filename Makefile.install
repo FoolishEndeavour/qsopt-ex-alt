@@ -117,8 +117,6 @@ EXTRA_DIST = \
 
 
 
-
-
 install-headers-oddcases: installdir include/QSopt_ex.h EXact/exact.h EXact/eq_exutil.h
 	test ! -d "$(DESTDIR)/$(includedir)"  &&  $(MKDIR_P) "$(DESTDIR)/$(includedir)"
 	$(INSTALL) -c -m 644 include/ "$(DESTDIR)/$(includedir)/"
@@ -130,37 +128,14 @@ TEMPLATE_HEADER := qstruct.h editor.h dstruct.h factor.h lpdefs.h readline.h lpd
 	ratio.h read_lp.h read_mps.h simplex.h write_lp.h \
 	lib.h 
 TEMPLATE_HEADER_FILE = $(foreach base,$(BASES),$(addprefix $(base)_,$(TEMPLATE_HEADER)))
-EXACT_HEADER_FILE = exact.h eg_exutil.h
 
-
-
+INTERFACE_HEADER_FILE = include/QSopt_ex.h
+EXACT_HEADER_FILE = EXact/exact.h EXact/eg_exutil.h
 
 
 install-headers: installdir $(header_DATA)
 	@if [ ! -d "${DESTDIR}/${includedir}" ]; then $(MKDIR_P) "${DESTDIR}/${includedir}" ; fi
-	# INTERFACE_HEADER_FILE = QSopt_ex.h
-	$(INSTALL) -c -m 644 include/QSopt_ex.h "$(DESTDIR)/$(includedir)/"
-	# EXACT_HEADER_FILE = exact.h eg_exutil.h
-	$(INSTALL) -c -m 644 include/QSopt_ex.h "$(DESTDIR)/$(includedir)/"
-	@list='$(header_DATA)'; test -n "$(headerdir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(headerdir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(headerdir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(headerdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(headerdir)" || exit $$?; \
-	done
-
-
-
-
-
-
-
+	$(INSTALL) -c -m 644 ${INTERFACE_HEADER_FILE} "$(DESTDIR)/$(includedir)/"
+	$(INSTALL) -c -m 644 ${EXACT_HEADER_FILE} "$(DESTDIR)/$(includedir)/"
 
 
