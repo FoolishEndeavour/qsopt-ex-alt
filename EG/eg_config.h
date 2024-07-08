@@ -48,10 +48,11 @@
 #define OSXMAC 2
 #define CYGWIN 3
 #define AIX 4
+#define FREEBSD 5
 #ifndef OS
 #define OS LINUX
 #endif
-#if ( (OS > AIX) || (OS < LINUX) )
+#if ( (OS > FREEBSD) || (OS < LINUX) )
 #error OS configuration value unknown
 #endif
 
@@ -63,6 +64,9 @@
 #include <stdint.h>
 #endif
 
+#if OS == FREEBSD
+#include <stdint.h>
+#endif
 
 /* ========================================================================= */
 /** @brief assert Debug options definitions, by defoult set on */

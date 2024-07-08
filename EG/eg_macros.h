@@ -360,7 +360,7 @@ extern int finite (double);
 /* ========================================================================= */
 /** @brief Define the real rand_max value of (random). In linux machines is 
  * as RAND_MAX, but in SUN is 2^31-1 */
-#if OS == LINUX || OS == OSXMAC || OS == CYGWIN || OS == AIX
+#if OS == LINUX || OS == OSXMAC || OS == CYGWIN || OS == AIX || OS == FREEBSD
 #define EGRAND_MAX RAND_MAX
 #endif
 #if OS == SUN

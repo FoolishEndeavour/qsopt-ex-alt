@@ -19,6 +19,7 @@ SUN := 1
 OSXMAC := 2
 CYGWIN := 3
 AIX := 4
+FREEBSD := 5
 
 # =============================================================================
 # architecture dependent configuration
@@ -52,6 +53,9 @@ OS := $(SUN)
 endif
 ifeq ($(HOST),Darwin)
 OS := $(OSXMAC)
+endif
+ifeq ($(HOST),FreeBSD)
+OS := $(FREEBSD)
 endif
 ifeq ($(HOST),AIX)
 OS := $(AIX)
